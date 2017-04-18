@@ -1,0 +1,266 @@
+.tinder_card {
+    background-color: white;
+    float: left;
+    padding: 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #ddd;
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    overflow: auto;
+    border-bottom: 7px solid white;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+h1,
+.toph3 {
+    text-align: center;
+}
+
+.drop-hover {
+    background-color: pink;
+}
+
+.tinder_container {
+    width: 70%;
+    margin-left: 0%;
+    margin-right: 0%;
+    float: left;
+    height: 500px;
+    /* border-bottom: 2px double #ddd; */
+    border-radius: 6px;
+    /* background-color: white; */
+    z-index: 10;
+    position: relative;
+}
+
+.MsgBox_bgr {
+    z-index: 100;
+}
+
+.knap_container {
+    float: left;
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    z-index: 25;
+}
+
+.btn_tinder {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 9px;
+    padding-bottom: 0px;
+    font-size: 3em;
+}
+
+.btn_no {
+    color: red;
+}
+
+#UserMsgBox > .glyphicon-remove {
+    color: #666;
+}
+
+.glyphicon-remove {
+    color: red;
+}
+
+.glyphicon-remove:hover {
+    color: red;
+}
+
+.btn_yes {
+    color: green;
+}
+
+.btn_yes:hover {
+    color: green;
+}
+
+.dropzone_no {
+    width: 45%;
+    height: 500px;
+    margin-left: 0px;
+    float: left;
+    margin-right: -30%;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+}
+
+.dropzone_yes {
+    width: 45%;
+    height: 500px;
+    margin-left: -30%;
+    float: left;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+}
+
+.card_header {
+    background-color: rgba(123, 231, 231, .5);
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.card_text_konkl {}
+
+@media (max-width: 768px) {
+    .tinder_container {
+        height: 500px;
+    }
+    .tinder_card {
+        height: 65%;
+    }
+    .btn_tinder {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 9px;
+        padding-bottom: 0px;
+        font-size: 1.8em;
+    }
+    .knap_container {
+        top: 70%;
+    }
+    .card_header {
+        font-size: 12px;
+    }
+    .card_text {
+        font-size: 16px;
+    }
+    .card_text_konkl {
+        font-size: 14px;
+    }
+    .txt_vurdering {
+        
+        text-align: center;
+        margin-top: -20px;
+        
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) and (max-width:1160px) {
+    .tinder_container {
+        height: 800px;
+    }
+    .tinder_card {
+        height: 75%;
+    }
+    .knap_container {
+        top: 82%;
+    }
+    .card_header {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    .card_text {
+        font-size: 24px;
+        padding-right: 40px;
+    }
+    .card_header_konkl {
+        margin-bottom: 30px;
+    }
+    .card_text_konkl {
+        font-size: 24px;
+    }
+    .instr_container {
+        margin-left: 20%;
+        width: 60%;
+    }
+    .txt_vurdering {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-size: 32px;
+    }
+}
+
+@media (min-width: 1160px) {
+    .tinder_container {
+        height: 800px;
+    }
+    .tinder_card {
+        height: 75%;
+    }
+    .knap_container {
+        top: 82%;
+    }
+    .card_header {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    .card_text {
+        font-size: 30px;
+        padding-right: 40px;
+    }
+    .card_header_konkl {
+        margin-bottom: 30px;
+    }
+    .card_text_konkl {
+        font-size: 24px;
+    }
+    .txt_vurdering {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-size: 32px;
+    }
+      .instr_container {
+        margin-left: 20%;
+        width: 60%;
+    }
+}
+
+#UserMsgBox .label {
+    margin-left: 0px;
+}
+
+.slutFeedback {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.label_container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btn_again {
+    margin-top: 30px;
+}
+
+.label_feed {
+    opacity: .8;
+}
+
+/************************************************
+*           Tilfoejet af THAN
+************************************************/
+
+.card_header{  /* Dette gemmer emne headeren på hvert kort */
+    display: none;
+}
+
+.card_text {
+    margin-top: 25%;
+    text-align: center;
+}
+
+.entityLabel {
+    color: #000;
+}

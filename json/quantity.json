@@ -1,0 +1,146 @@
+[{
+    "Nogleproblem": "XXX",
+    "CLIPBOARD_prefixer" : ["yokto", "zepto", "atto", "femto", "piko", "nano", "mikro", "milli", "kilo", "mega", "giga", "tera", "peta", "exa", "zetta", "yotta"],
+    "Problemformulering": "Er <span class='entityLabel label label-info'>tid</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Tid er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>sekunder</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makePrefixedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>sekund</span> en fysisk størrelse eller en enhed?",
+    "Prefixer" : ["nano", "mikro", "milli"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>tid</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makeSpecifiedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>(???)</span> en fysisk størrelse eller en enhed?",
+    "Enheder" : ["sekund", "minut", "time", "døgn", "år"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>tid</span>."
+}, {
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>masse</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Masse er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>kilogram</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makePrefixedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>gram</span> en fysisk størrelse eller en enhed?",
+    "Prefixer" : ["milli", "kilo"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>masse</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makeSpecifiedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>(???)</span> en fysisk størrelse eller en enhed?",
+    "Enheder" : ["gram", "ton"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>masse</span>."
+}, {
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>areal</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Areal er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>kvadratmeter</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makeSpecifiedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>(???)</span> en fysisk størrelse eller en enhed?",
+    "Enheder" : ["kvadratmeter", "kvadratcentimeter", "kvadratmilimeter", "kvadratkilometer"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>areal</span>."
+}, {
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>volumen</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Volumen er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>kubikmeter</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makeSpecifiedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>(???)</span> en fysisk størrelse eller en enhed?",
+    "Enheder" : ["kubikmeter", "kubikcentimeter", "liter", "milliliter", "centiliter", "mikroliter"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>volumen</span>."
+}, {
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>energi</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Energi er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>Joule</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makePrefixedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>Joule</span> en fysisk størrelse eller en enhed?",
+    "Prefixer" : ["kilo", "mega"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>energi</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makeSpecifiedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>(???)</span> en fysisk størrelse eller en enhed?",
+    "Enheder" : ["Joule", "wattime"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>energi</span>."
+}, {
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>effekt</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Effekt er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>Watt</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makePrefixedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>Watt</span> en fysisk størrelse eller en enhed?",
+    "Prefixer" : ["milli", "kilo", "mega"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>effekt</span>."
+}, {
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>frekvens</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Frekvens er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>Hertz</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makePrefixedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>Hertz</span> en fysisk størrelse eller en enhed?",
+    "Prefixer" : ["kilo", "mega", "giga"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>frekvens</span>."
+},{
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>strækning</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Strækning er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>meter</span>."
+},{
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>afstand</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Afstand er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>meter</span>."
+},{
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>længde</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Længde er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>meter</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makeSpecifiedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>(???)</span> en fysisk størrelse eller en enhed?",
+    "Enheder" : ["meter", "centimeter", "millimeter", "kilometer", "mikrometer", "nanometer", "lysår", "megalysår", "Ångstrøm"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>strækning</span>, <span class='entityLabel label label-info'>længde</span> eller <span class='entityLabel label label-info'>afstand</span>."
+},{
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>densitet</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Densitet er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>kilogram pr. kubikmeter</span>."
+},{
+    "Nogleproblem": "XXX",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>massefylde</span> en fysisk størrelse eller en enhed?",
+    "Korrekt": true,
+    "Feedback": "Dette er ikke en enhed. Massefylde er en fysisk størrelse som typisk måles i SI-enheden <span class='entityLabel label label-info'>kilogram pr. kubikmeter</span>."
+},{
+    "Nogleproblem": "XXX",
+    "NOTE" : "makeSpecifiedUnits() virker her!",
+    "Problemformulering": "Er <span class='entityLabel label label-info'>(???)</span> en fysisk størrelse eller en enhed?",
+    "Enheder" : ["kilogram pr. kubikmeter", "gram pr. milliliter", "gram pr. kubikcentimeter", "gram pr. liter"],
+    "Korrekt": false,
+    "Feedback": "Dette er ikke en fysisk størrelse. Det er en enhed for <span class='entityLabel label label-info'>densitet</span> eller <span class='entityLabel label label-info'>massefylde</span>."
+}]

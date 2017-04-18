@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fysisk størrelse eller enhed?</title>
+    <!-- http://www.robotstxt.org/meta.html -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../library/css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="tinder.css" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+</head>
+
+<body>
+    <div class="container-fluid">
+    
+        <h1 class="hidden-sm hidden-xs">Fysisk størrelse eller enhed?</h1>
+        <h3 class="toph3 hidden-md hidden-lg">Fysisk størrelse eller enhed?</h3>
+        <div class="instr_container"></div>
+        <div class="col-xs-12"></div>
+        <div class="dropzone dropzone_no"></div>
+        <div class="tinder_container">
+            
+           
+        </div>
+        <div class="dropzone dropzone_yes"></div>
+    </div>
+</body>
+<script src="../library/vendor_scripts.js"></script>
+<script src="../library/custom_scripts.js"></script>
+<script src="tinder.js"></script>
+<script>
+    getAjaxData("GET", "json/quantity.json", false, "json");
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    one_line_footer();
+});
+</script>
+</body>
+
+</html>
