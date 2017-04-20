@@ -307,8 +307,13 @@ h1,
     overflow: hidden;
 }
 
+.btn_tinder {
+    position: relative;
+    left: 1%;
+}
 
 @media (max-width: 768px) {
+
     .smallLetters{
         font-size: 0.6em;
         bottom: 6px;
@@ -316,6 +321,7 @@ h1,
 
     .btn_tinder {
         padding-bottom: 3px;
+        left: 2%;
     }
 
     .card_number{
