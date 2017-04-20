@@ -21,7 +21,8 @@ $(document).ready(function() {
         // opg_type = "konklusion";
         opg_type = "konklusion";
     } else {
-        $(".instr_container").html(instruction("Du skal vurdere om der er tale om en fysisk størrelse eller en enhed. Træk kortet til <span class='label label-success'>højre</span> hvis det er en fysisk størrelse og til <span class='label label-danger'>venstre</span> hvis det er en enhed."));
+        // $(".instr_container").html(instruction("Du skal vurdere om der er tale om en fysisk størrelse eller en enhed. Træk kortet til <span class='label label-info label-directions'>højre</span> hvis det er en fysisk størrelse og til <span class='label label-info label-directions'>venstre</span> hvis det er en enhed."));
+        $(".instr_container").html(instruction("Du skal vurdere om der er tale om en fysisk størrelse eller en enhed. Træk kortet til højre hvis det er en fysisk størrelse og til venstre hvis det er en enhed."));
         opg_type = "problemformulering"
         // shuffle_Array(jsonData);   // <---------------------------  // Randomize jsonData  -  COMMENTED OUT 6/4-2017
         //$(".tinder_container").css("height", "750px"); 
@@ -72,11 +73,13 @@ $(document).ready(function() {
             if (dropclass == "dropzone_no") {
                 $(".txt_vurdering").eq(0).css("opacity", 1);
                 // $(".txt_vurdering").eq(0).html("<span class='label label_feed label-danger'>Dårlig " + opg_type + "</span>");
-                $(".txt_vurdering").eq(0).html("<span class='label label_feed label-danger'>Enhed</span>");
+                // $(".txt_vurdering").eq(0).html("<span class='label label_feed label-info label-directions'>Enhed</span>");
+                $(".txt_vurdering").eq(0).html("<span class='label label_feed label-info label-directions'>Fysisk størrelse</span>");
             } else if (dropclass == "dropzone_yes") {
                 $(".txt_vurdering").eq(0).css("opacity", 1);
                 // $(".txt_vurdering").eq(0).html("<span class='label label_feed label-success'>God " + opg_type + "</span>");
-                $(".txt_vurdering").eq(0).html("<span class='label label_feed label-success'>Fysisk størrelse</span>");
+                // $(".txt_vurdering").eq(0).html("<span class='label label_feed label-info label-directions'>Fysisk størrelse</span>");
+                $(".txt_vurdering").eq(0).html("<span class='label label_feed label-info label-directions'>Enhed</span>");
             }
         }
     });
@@ -92,7 +95,7 @@ function generateHTML() {
         $(".tinder_container").append("<div class='text_container tinder_card card_" + i + "'></div>");
         if (opg_type == "problemformulering") {
             // $(".tinder_card").eq(i).html("<p class='card_header'><b>Emne:</b> ''" + jsonData[i].Nogleproblem + "''</p><p class='card_text'>" + jsonData[i].Problemformulering + "</p><div class='txt_vurdering'></div>");
-            $(".tinder_card").eq(i).html("<p class='card_header'><b>Emne:</b> ''" + jsonData[i].Nogleproblem + "''</p><span class='card_number'>"+jsonData[i].no+"</span><p class='card_text'>" + jsonData[i].Problemformulering + "</p><div class='txt_vurdering'></div>");
+            $(".tinder_card").eq(i).html("<p class='card_header'><b>Emne:</b> ''" + jsonData[i].Nogleproblem + "''</p><span class='card_number'>"+String(parseInt(jsonData[i].no)+1)+"/"+jsonData.length+"</span><p class='card_text'>" + jsonData[i].Problemformulering + "</p><div class='txt_vurdering'></div>");
         } else {
             $(".tinder_card").eq(i).html("<p class='card_header card_header_konkl'><b>Problemformulering:</b> ''" + jsonData[i].Problemformulering + "''</p><p class='card_text_konkl'></p><p class='card_text_konkl'>" + jsonData[i].Konklusion + "</p><div class='txt_vurdering'></div>");
         }
@@ -105,7 +108,9 @@ function generateHTML() {
     $(".knap_container").css("z-index", 1);
     $(".txt_vurdering").css("opacity", 0);
 
-    $(".tinder_container").append('<div class="knap_container col-md-12"><div class="btn_tinder btn-lg btn btn-info btn_no"><span class="glyphicon glyphicon-remove"></span></div><div class="btn_tinder btn btn-info btn-lg btn_yes"><span class="glyphicon glyphicon-heart"></span></div></div>');
+    // COMMENTED OUT 19-4-2017:
+    // $(".tinder_container").append('<div class="knap_container col-md-12"><div class="btn_tinder btn-lg btn btn-info btn_no"><span class="glyphicon glyphicon-remove"></span></div><div class="btn_tinder btn btn-info btn-lg btn_yes"><span class="glyphicon glyphicon-heart"></span></div></div>');
+    
     //$(".boxit").boxfit({ multiline: true });
     //$(".card_text").boxfit({ multiline: true });
     //$(".tinder_container .tinder_card").shuffle_div_position();
@@ -170,13 +175,22 @@ function feedback(ui) {
 
     console.log('feedback - jsonData['+runde+'].Korrekt: '+jsonData[runde].Korrekt+', user_select: ' + user_select);
 
-    if (jsonData[runde].Korrekt == user_select) {
+    // if (jsonData[runde].Korrekt == user_select) {
+    //     var svar_type = "<span class='label label-success'>Rigtigt</span>"; //$(".svar").html("Du svarede rigtigt.");
+    //     //correct_sound();
+    // } else if (jsonData[runde].Korrekt != user_select) {
+    //     var svar_type = "<span class='label label-danger'>Forkert</span>"; //$(".svar").html("Du svarede forkert.");
+    //     //error_sound();
+    // }
+
+    if (jsonData[runde].Korrekt != user_select) {
         var svar_type = "<span class='label label-success'>Rigtigt</span>"; //$(".svar").html("Du svarede rigtigt.");
         //correct_sound();
-    } else if (jsonData[runde].Korrekt != user_select) {
+    } else if (jsonData[runde].Korrekt == user_select) {
         var svar_type = "<span class='label label-danger'>Forkert</span>"; //$(".svar").html("Du svarede forkert.");
         //error_sound();
     }
+    
     console.log("Runde: " + runde + ", Korrekt: " + jsonData[runde].Korrekt + ", " + user_select);
     if (opg_type == "problemformulering") {
 
@@ -186,10 +200,10 @@ function feedback(ui) {
         //     UserMsgBox("body", "<h3>Du svarede " + svar_type + "</h3><p class='hidden-xs hidden-sm'>'" + jsonData[runde].Problemformulering + "' <br/><h3>Denne " + opg_type + " er  <span class='label label-danger'>Dårlig</span></h3></p><p>" + jsonData[runde].Feedback + "</p>");
         // }
 
-        if (jsonData[runde].Korrekt === user_select) {
-            UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: </h3><p class='hidden-xs hidden-sm'>'" + jsonData[runde].Problemformulering + "'</p>");
-        } else if (jsonData[runde].Korrekt !== user_select) {
-            UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: </h3><p class='hidden-xs hidden-sm'>'" + jsonData[runde].Problemformulering + "'</p><br/><p>" + jsonData[runde].Feedback + "</p>");
+        if (jsonData[runde].Korrekt !== user_select) {
+            UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: </h3><p class=''>'" + jsonData[runde].Problemformulering + "'</p><br/><p>" + jsonData[runde].Feedback + "</p>");
+        } else if (jsonData[runde].Korrekt === user_select) {
+            UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: </h3><p class=''>'" + jsonData[runde].Problemformulering + "'</p><br/><p>" + jsonData[runde].Feedback + "</p>");
         }
 
     } else if (opg_type == "konklusion") {
@@ -317,8 +331,12 @@ function makePrefixedUnits(includeOriginalUnit_bool, numOfPrefixes) {
     var prefixArr_mod = prefixArr.slice(0, numOfPrefixes); 
     var unit, quantity, TjsonData = [], prob, prob_mod;
     for (var n in jsonData) {
+        console.log('makePrefixedUnits - A - jsonData['+n+']: ' + JSON.stringify(jsonData[n], null, 4));
         if ((!jsonData[n].Korrekt) && (typeof(jsonData[n].Enheder)==='undefined')) {  // Korrekt = true <==> Fysisk størrelse _ELLER_ Korrekt = false <==> Enhed. Ekskluder alle opgaver 
+        // if ((jsonData[n].Korrekt) && (typeof(jsonData[n].Enheder)==='undefined')) {  // Korrekt = true <==> Enhed _ELLER_ Korrekt = false <==> Fysisk størrelse . Ekskluder alle opgaver 
+            console.log('makePrefixedUnits - A0 - n: ' + n);
             if (includeOriginalUnit_bool) {
+                console.log('makePrefixedUnits - A1 - n: ' + n);
                 TjsonData.push(jsonData[n]);
             }
             prob = jsonData[n].Problemformulering;
@@ -327,6 +345,7 @@ function makePrefixedUnits(includeOriginalUnit_bool, numOfPrefixes) {
             console.log('makePrefixedUnits - n: ' + n + ', unit: ' + unit + ', quantity: ' + quantity);
 
             if (typeof(jsonData[n].Prefixer)!=='undefined') {  // Dette giver nye prefixer fra jsonData, hvis de er specificeret.
+                console.log('makePrefixedUnits - A2 - n: ' + n);
                 prefixArr_mod = (includeOriginalUnit_bool)? [''].concat(jsonData[n].Prefixer) : jsonData[n].Prefixer;
             }
             for (var m in prefixArr_mod) {
@@ -336,6 +355,7 @@ function makePrefixedUnits(includeOriginalUnit_bool, numOfPrefixes) {
                 TjsonData.push(prob_mod);
             }
         } else {
+            console.log('makePrefixedUnits - A3 - n: ' + n);
             TjsonData.push(jsonData[n]);
         }
     }
@@ -354,6 +374,7 @@ function makeSpecifiedUnits() {
     for (var n in jsonData) {
         console.log('makeSpecifiedUnits - A0');
         if ((!jsonData[n].Korrekt) && (typeof(jsonData[n].Enheder)!=='undefined')) {  // Hvis der er tale om enheder OG array-property'en "Enheder" er defineret, så...
+        // if ((jsonData[n].Korrekt) && (typeof(jsonData[n].Enheder)==='undefined')) {  // Hvis der er tale om Fysisk størrelser OG array-property'en "Enheder" er defineret, så...    // Korrekt = true <==> Enhed _ELLER_ Korrekt = false <==> Fysisk størrelse . Ekskluder alle opgaver 
             console.log('makeSpecifiedUnits - A1');
             prob = jsonData[n].Problemformulering;
             for (var m in jsonData[n].Enheder) {   
@@ -376,5 +397,6 @@ function insertCardNo() {
     for (var n in jsonData) {
         jsonData[n].no = n;
     }
+    console.log('insertCardNo - jsonData: ' + JSON.stringify(jsonData, null, 4));
 }
 

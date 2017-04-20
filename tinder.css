@@ -252,6 +252,15 @@ h1,
 *           Tilfoejet af THAN
 ************************************************/
 
+.tinder_container {
+    width: 40%;
+    margin-left: 15%;
+}
+
+.dropzone_yes {
+    float: right;
+}
+
 .card_header{  /* Dette gemmer emne headeren på hvert kort */
     display: none;
 }
@@ -261,6 +270,57 @@ h1,
     text-align: center;
 }
 
+.card_number{
+    font-size: 18px;
+}
+
 .entityLabel {
     color: #000;
 }
+
+.footerCopywrite {
+    position: relative;
+    top: -130px;
+}
+
+.label-primary {
+    color: #FFF;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {  /* Overskrive gammel grøn og rød tekst */
+    color: #FFF;
+}
+
+.smallLetters{
+    text-transform: initial;
+    font-size: 0.5em;
+    position: relative;
+    bottom: 11px;
+}
+
+.label-directions{
+    color: #000;
+}
+
+.tinder_container_wrapper {
+    height: 1100px;
+    overflow: hidden;
+}
+
+
+@media (max-width: 768px) {
+    .smallLetters{
+        font-size: 0.6em;
+        bottom: 6px;
+    }
+
+    .btn_tinder {
+        padding-bottom: 3px;
+    }
+
+    .card_number{
+        font-size: 12px;
+    }
+}
+
+
