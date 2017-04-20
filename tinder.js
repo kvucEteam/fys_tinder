@@ -190,7 +190,7 @@ function feedback(ui) {
         var svar_type = "<span class='label label-danger'>Forkert</span>"; //$(".svar").html("Du svarede forkert.");
         //error_sound();
     }
-    
+
     console.log("Runde: " + runde + ", Korrekt: " + jsonData[runde].Korrekt + ", " + user_select);
     if (opg_type == "problemformulering") {
 
@@ -200,10 +200,10 @@ function feedback(ui) {
         //     UserMsgBox("body", "<h3>Du svarede " + svar_type + "</h3><p class='hidden-xs hidden-sm'>'" + jsonData[runde].Problemformulering + "' <br/><h3>Denne " + opg_type + " er  <span class='label label-danger'>Dårlig</span></h3></p><p>" + jsonData[runde].Feedback + "</p>");
         // }
 
-        if (jsonData[runde].Korrekt !== user_select) {
-            UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: </h3><p class=''>'" + jsonData[runde].Problemformulering + "'</p><br/><p>" + jsonData[runde].Feedback + "</p>");
-        } else if (jsonData[runde].Korrekt === user_select) {
-            UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: </h3><p class=''>'" + jsonData[runde].Problemformulering + "'</p><br/><p>" + jsonData[runde].Feedback + "</p>");
+        if (jsonData[runde].Korrekt !== user_select) {         // KORREKT
+            UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: </h3><p class=''>'" + jsonData[runde].Problemformulering + "'</p><br/><p> Du svarede: " + ((jsonData[runde].Korrekt)? 'Fysisk størrelse' : 'Enhed') + ". </p>");
+        } else if (jsonData[runde].Korrekt === user_select) {  // FORKERT
+            UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: X </h3><p class=''>'" + jsonData[runde].Problemformulering + "'</p><br/><p>" + jsonData[runde].Feedback + "</p>");
         }
 
     } else if (opg_type == "konklusion") {
