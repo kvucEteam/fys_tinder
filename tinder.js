@@ -159,12 +159,14 @@ function makeDraggable() {
         },
         stop: function(event, ui) {
             if (jsonData[runde].Korrekt === user_select && revert == false) {
-                correct_sound();
+                // correct_sound();
+                error_sound();
                 score++;
                 console.log("Score: " + score + "LEnght: " + jsonData.length);
 
             } else if (jsonData[runde].Korrekt != user_select && revert == false) {
-                error_sound();
+                // error_sound();
+                correct_sound();
             }
             revert = false;
         },
@@ -270,11 +272,13 @@ function btn_click(class_type) {
     }
 
     if (jsonData[runde].Korrekt == user_select) {
-        correct_sound();
+        // correct_sound();
+        error_sound();
         score++;
         console.log("Score: " + score + " length: " + jsonData.length);
     } else {
-        error_sound();
+        // error_sound();
+        correct_sound();
     }
 
 
