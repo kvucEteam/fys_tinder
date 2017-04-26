@@ -161,14 +161,17 @@ function makeDraggable() {
             if (jsonData[runde].Korrekt === user_select && revert == false) {
                 // correct_sound();
                 error_sound();
-                score++;
+                // score++;
                 console.log("Score: " + score + "LEnght: " + jsonData.length);
 
             } else if (jsonData[runde].Korrekt != user_select && revert == false) {
                 // error_sound();
                 correct_sound();
+                score++;
             }
             revert = false;
+
+            console.log("STOP - score: " + score );
         },
     });
 }
@@ -205,7 +208,7 @@ function feedback(ui) {
         if (jsonData[runde].Korrekt !== user_select) {         // KORREKT
             UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: </h3><p class=''>'" + jsonData[runde].Problemformulering + "'</p><br/><p> Du svarede: " + ((jsonData[runde].Korrekt)? 'Fysisk størrelse' : 'Enhed') + ". </p>");
         } else if (jsonData[runde].Korrekt === user_select) {  // FORKERT
-            UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: X </h3><p class=''>'" + jsonData[runde].Problemformulering + "'</p><br/><p>" + jsonData[runde].Feedback + "</p>");
+            UserMsgBox("body", "<h3>Du svarede " + svar_type + " på spørgsmålet: </h3><p class=''>'" + jsonData[runde].Problemformulering + "'</p><br/><p>" + jsonData[runde].Feedback + "</p>");
         }
 
     } else if (opg_type == "konklusion") {
@@ -274,12 +277,14 @@ function btn_click(class_type) {
     if (jsonData[runde].Korrekt == user_select) {
         // correct_sound();
         error_sound();
-        score++;
+        // score++;
         console.log("Score: " + score + " length: " + jsonData.length);
     } else {
         // error_sound();
         correct_sound();
+        score++;
     }
+    console.log("btn_click - score: " + score );
 
 
     $(".tinder_card").eq(0).animate({
