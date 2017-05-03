@@ -14,7 +14,7 @@ $(document).ready(function() {
     makePrefixedUnits(false, 2);
     makeSpecifiedUnits();
     insertCardNo();
-    console.log('document.ready - jsonData 2: ' + JSON.stringify(jsonData, null, 4) + ', \njsonData.length: ' + jsonData.length);
+    console.log('document.ready - jsonData 2: ' + JSON.stringify(jsonData) + ', \njsonData.length: ' + jsonData.length);
 
     if (jsonData[0].Konklusion) {
         $(".instr_container").html(instruction("Du skal vurdere konklusionen og trække kortet til <span class='label label-success'>højre</span> hvis den er god og til <span class='label label-danger'>venstre</span> hvis den er dårlig."));
@@ -83,6 +83,9 @@ $(document).ready(function() {
             }
         }
     });
+
+
+    $('.scoreContainer').html(displayKorrekteSvarOgAntalForsoeg(0, 0));
 
 });
 
@@ -162,16 +165,21 @@ function makeDraggable() {
                 // correct_sound();
                 error_sound();
                 // score++;
+                $('.attempts').html(parseInt(jsonData[runde].no)+1);
                 console.log("Score: " + score + "LEnght: " + jsonData.length);
 
             } else if (jsonData[runde].Korrekt != user_select && revert == false) {
                 // error_sound();
                 correct_sound();
                 score++;
+                $('.correctAnswers').html(score);
+                $('.attempts').html(parseInt(jsonData[runde].no)+1);
             }
             revert = false;
 
             console.log("STOP - score: " + score );
+
+
         },
     });
 }
@@ -277,12 +285,15 @@ function btn_click(class_type) {
     if (jsonData[runde].Korrekt == user_select) {
         // correct_sound();
         error_sound();
+        $('.attempts').html(parseInt(jsonData[runde].no)+1);
         // score++;
         console.log("Score: " + score + " length: " + jsonData.length);
     } else {
         // error_sound();
         correct_sound();
         score++;
+        $('.correctAnswers').html(score);
+        $('.attempts').html(parseInt(jsonData[runde].no)+1);
     }
     console.log("btn_click - score: " + score );
 
@@ -340,7 +351,7 @@ function makePrefixedUnits(includeOriginalUnit_bool, numOfPrefixes) {
     var prefixArr_mod = prefixArr.slice(0, numOfPrefixes); 
     var unit, quantity, TjsonData = [], prob, prob_mod;
     for (var n in jsonData) {
-        console.log('makePrefixedUnits - A - jsonData['+n+']: ' + JSON.stringify(jsonData[n], null, 4));
+        console.log('makePrefixedUnits - A - jsonData['+n+']: ' + JSON.stringify(jsonData[n]));
         if ((!jsonData[n].Korrekt) && (typeof(jsonData[n].Enheder)==='undefined')) {  // Korrekt = true <==> Fysisk størrelse _ELLER_ Korrekt = false <==> Enhed. Ekskluder alle opgaver 
         // if ((jsonData[n].Korrekt) && (typeof(jsonData[n].Enheder)==='undefined')) {  // Korrekt = true <==> Enhed _ELLER_ Korrekt = false <==> Fysisk størrelse . Ekskluder alle opgaver 
             console.log('makePrefixedUnits - A0 - n: ' + n);
@@ -368,7 +379,7 @@ function makePrefixedUnits(includeOriginalUnit_bool, numOfPrefixes) {
             TjsonData.push(jsonData[n]);
         }
     }
-    console.log('makePrefixedUnits - TjsonData: ' + JSON.stringify(TjsonData, null, 4));
+    console.log('makePrefixedUnits - TjsonData: ' + JSON.stringify(TjsonData));
 
     jsonData = TjsonData;
 }
@@ -396,7 +407,7 @@ function makeSpecifiedUnits() {
             TjsonData.push(jsonData[n]);
         }
     }
-    console.log('makeSpecifiedUnits - TjsonData: ' + JSON.stringify(TjsonData, null, 4));
+    console.log('makeSpecifiedUnits - TjsonData: ' + JSON.stringify(TjsonData));
 
     jsonData = TjsonData;
 }
@@ -406,6 +417,26 @@ function insertCardNo() {
     for (var n in jsonData) {
         jsonData[n].no = n;
     }
-    console.log('insertCardNo - jsonData: ' + JSON.stringify(jsonData, null, 4));
+    console.log('insertCardNo - jsonData: ' + JSON.stringify(jsonData));
 }
+
+
+function displayKorrekteSvarOgAntalForsoeg(attempts, correctAnswers) {
+    var HTML = '';
+    HTML += '<span class="attemptsAndcorrectAnswers hidden-xs hidden-sm">';
+    HTML +=     '<span class="glyphicon glyphicon-pencil"></span> <span class="attemptsAndcorrectAnswers_subDisplay h4">ANTAL FORSØG = <span class="attempts">' + attempts +'</span></span>';
+    HTML +=     '<span class="glyphicon glyphicon-ok"></span> <span class="attemptsAndcorrectAnswers_subDisplay h4">KORREKTE SVAR = <span class="correctAnswers">' + correctAnswers +'</span></span>';
+    HTML += '</span>';
+    HTML += '<div class="hidden-md hidden-lg marginTopAjust"></div>';
+    HTML += '<div class="attemptsAndcorrectAnswers hidden-md hidden-lg widthFixed center">';
+    HTML +=     '<span class="glyphicon glyphicon-pencil"></span> <span class="h4">ANTAL FORSØG = <span class="attempts dataDisplay">' + attempts +'</span></span>';
+    HTML += '</div>';
+    HTML += '<div class="hidden-md hidden-lg spacer"></div>';
+    HTML += '<div class="attemptsAndcorrectAnswers hidden-md hidden-lg widthFixed center">';
+    HTML +=     '<span class="glyphicon glyphicon-ok"></span> <span class="h4">KORREKTE SVAR = <span class="correctAnswers dataDisplay">' + correctAnswers +'</span></span>';
+    HTML += '</div>';
+    return HTML;
+}
+
+
 
