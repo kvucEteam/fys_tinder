@@ -348,7 +348,6 @@ h1,
     min-width: 215px;
     display: inline-block;
     padding-right: 0px;
-    /*margin-left: 17%;*/
     position: relative;  /*Dette justere positionen - marginTopAjust virker ikke*/
     top: -120px;
 }
@@ -362,11 +361,11 @@ h1,
 }
 
 @media (min-width: 768px) and (max-width:1160px) {
-/*
+
     .center {
-        margin-left: calc(50% - 110px);
+        top: -135px;
     }
-*/
+
 }
 
 @media (max-width: 768px) {
