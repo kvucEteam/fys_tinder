@@ -316,7 +316,8 @@ h1,
 
 
 .attemptsAndcorrectAnswers{
-    border: 1px solid #000;
+    border: 1px solid #666;
+    color: #666;
     padding: 7px 10px 5px 10px;
     border-radius: 5px;
     position: relative;
