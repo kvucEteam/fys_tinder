@@ -13,7 +13,7 @@ $(document).ready(function() {
     console.log('document.ready - jsonData 1: ' + JSON.stringify(jsonData) + ', \njsonData.length: ' + jsonData.length);
     makePrefixedUnits(false, 2);
     makeSpecifiedUnits();
-    insertCardNo();
+    // insertCardNo();
     console.log('document.ready - jsonData 2: ' + JSON.stringify(jsonData) + ', \njsonData.length: ' + jsonData.length);
 
     if (jsonData[0].Konklusion) {
@@ -22,11 +22,12 @@ $(document).ready(function() {
         opg_type = "konklusion";
     } else {
         // $(".instr_container").html(instruction("Du skal vurdere om der er tale om en fysisk størrelse eller en enhed. Træk kortet til <span class='label label-info label-directions'>højre</span> hvis det er en fysisk størrelse og til <span class='label label-info label-directions'>venstre</span> hvis det er en enhed."));
-        $(".instr_container").html(instruction("Du skal vurdere om der er tale om en fysisk størrelse eller en enhed. Træk kortet til højre hvis det er en fysisk størrelse og til venstre hvis det er en enhed."));
+        $(".instr_container").html(instruction("Du skal vurdere, om der er tale om en fysisk størrelse eller en enhed. Træk kortet til venstre, hvis det er en fysisk størrelse, og til højre hvis det er en enhed."));
         opg_type = "problemformulering"
-        // shuffle_Array(jsonData);   // <---------------------------  // Randomize jsonData  -  COMMENTED OUT 6/4-2017
+        shuffle_Array(jsonData);   // <---------------------------  // Randomize jsonData  -  COMMENTED OUT 6/4-2017
         //$(".tinder_container").css("height", "750px"); 
     }
+    insertCardNo();
 
     $(".instr_container").find("div").removeClass("col-md-8");
 
