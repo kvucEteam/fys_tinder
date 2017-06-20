@@ -8,6 +8,8 @@ var revert = false;
 
 var score = 0;
 
+
+
 $(document).ready(function() {
 
     console.log('document.ready - jsonData 1: ' + JSON.stringify(jsonData) + ', \njsonData.length: ' + jsonData.length);
@@ -50,8 +52,8 @@ $(document).ready(function() {
             if (class_type == "dropzone_no") {
                 user_select = false;
                 ui.draggable.animate({
-                    opacity: 1,
-                    left: "-=1400"
+                    opacity: .4,
+                    left: "-=60"
                 }, 200, function() {
                     feedback(ui);
                 });
@@ -61,8 +63,8 @@ $(document).ready(function() {
                 //UserMsgBox("body", "<h3>Du har svaret <span class='label label-danger'>Forkert</span> </h3><h3> Feedback:</h3><p>Lorem ipsum....</p>");
 
                 ui.draggable.animate({
-                    opacity: 1,
-                    left: "+=1400"
+                    opacity: .4,
+                    left: "+=60"
                 }, 200, function() {
                     feedback(ui);
                 });
@@ -162,6 +164,7 @@ function makeDraggable() {
             });
         },
         stop: function(event, ui) {
+
             if (jsonData[runde].Korrekt === user_select && revert == false) {
                 // correct_sound();
                 error_sound();
@@ -230,10 +233,12 @@ function feedback(ui) {
     }
 
 
+
     $(".tinder_card").eq(0).remove();
     runde++;
     //generateHTML();
     //makeDraggable();
+    //alert("hej");
     updateStack();
 }
 
@@ -275,12 +280,12 @@ function btn_click(class_type) {
     if (class_type == "btn_no") {
         user_select = false;
         var rotate = 0;
-        var pos = "-=400";
+        var pos = "-=130";
     } else if (class_type == "btn_yes") {
         user_select = true;
 
         var rotate = 0;
-        var pos = "+=400";
+        var pos = "+=130";
     }
 
     if (jsonData[runde].Korrekt == user_select) {
@@ -302,7 +307,7 @@ function btn_click(class_type) {
     $(".tinder_card").eq(0).animate({
         left: pos,
         opacity: "0"
-    }, 400, function() {
+    }, 800, function() {
 
 
 
