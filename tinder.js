@@ -90,6 +90,10 @@ $(document).ready(function() {
 
     $('.scoreContainer').html(displayKorrekteSvarOgAntalForsoeg(0, 0));
 
+    /// THAN : Måske kan vi få den til at fyre efter der er blevet rescalet til mobil? 
+    microhint($(".knap_container"), "Klik på pilene, eller træk kortene til højre eller venstre")
+    //
+
 });
 
 function generateHTML() {
